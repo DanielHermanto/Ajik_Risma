@@ -110,12 +110,10 @@
       padding: 20px;
       font-size: 14px;
     }
-
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(-20px); }
       to { opacity: 1; transform: translateY(0); }
     }
-
     @keyframes fadeInUp {
       from { opacity: 0; transform: translateY(40px); }
       to { opacity: 1; transform: translateY(0); }
@@ -132,7 +130,7 @@
 <section class="hero">
   <h1>Kamu Nulis, Kami Bantu Rapihin Teknisnya</h1>
   <p>
-    Udah capek nulis skripsi tapi masih pusing beresin bagian teknis? 
+    Udah capek nulis skripsi tapi masih pusing beresin bagian teknis?
     Nomor halaman loncat-loncat, daftar isi gak sinkron, dan daftar pustaka belum rapi?
     Kami bantu kamu fokus ke isi, dan kami yang urus bagian teknisnya.
     Dijamin rapi, sesuai pedoman kampus, dan siap kumpul!
@@ -143,14 +141,32 @@
   <div class="feature-box">
     <h3>🔢 Nomor Halaman</h3>
     <p>Penomoran otomatis dari cover sampai lampiran, sesuai aturan kampus.</p>
+    <button onclick="kirimWa('nomor halaman mulai dari 20rb')">Pesan Sekarang</button>
   </div>
   <div class="feature-box">
     <h3>📄 Daftar Isi</h3>
     <p>Sinkronisasi otomatis dari heading dan halaman agar tidak ada yang loncat.</p>
+    <button onclick="kirimWa('daftar isi rapi dan sinkron')">Pesan Sekarang</button>
   </div>
   <div class="feature-box">
     <h3>📚 Daftar Pustaka</h3>
     <p>Penyesuaian dan format sitasi otomatis sesuai gaya APA, IEEE, dll.</p>
+    <button onclick="kirimWa('format daftar pustaka sesuai gaya sitasi')">Pesan Sekarang</button>
+  </div>
+  <div class="feature-box">
+    <h3>✍️ Pengetikan Makalah</h3>
+    <p>Materi sudah ada: Rp5.000/halaman. Belum ada: Rp8.000/halaman.</p>
+    <button onclick="kirimWa('pengetikan makalah, sebutkan apakah materi sudah ada atau belum')">Pesan Sekarang</button>
+  </div>
+  <div class="feature-box">
+    <h3>📊 Bikin PowerPoint</h3>
+    <p>Rp5.000 – Rp8.000 per slide. Desain rapi dan mudah dipahami.</p>
+    <button onclick="kirimWa('bikin slide PowerPoint, sebutkan jumlah slide dan isi materi')">Pesan Sekarang</button>
+  </div>
+  <div class="feature-box">
+    <h3>📑 Daftar Tabel, Isi & Pustaka</h3>
+    <p>Paket pembuatan daftar isi, tabel, dan pustaka hanya Rp20rb-an.</p>
+    <button onclick="kirimWa('bikin daftar isi, tabel, dan pustaka')">Pesan Sekarang</button>
   </div>
 </section>
 
@@ -165,10 +181,15 @@
 <section class="pricing">
   <h3>💰 Harga Jasa</h3>
   <ul>
-    <li>✔ Nomor Halaman Otomatis: <strong>Mulai dari Rp50.000</strong></li>
-    <li>✔ Daftar Isi Sinkron: <strong>Mulai dari Rp50.000</strong></li>
-    <li>✔ Daftar Pustaka Rapi: <strong>Mulai dari Rp50.000</strong></li>
-    <li><em>*Harga bisa bervariasi tergantung tingkat kesulitan dan revisi.</em></li>
+    <li>✔ Nomor Halaman: <strong>Mulai dari Rp20.000</strong></li>
+    <li>✔ Daftar Isi Sinkron: <strong>Rp50.000</strong></li>
+    <li>✔ Daftar Pustaka: <strong>Rp50.000</strong></li>
+    <li>✔ Pengetikan Makalah: <strong>Rp5.000 – 8.000 / halaman</strong></li>
+    <li>✔ PowerPoint: <strong>Rp5.000 – 8.000 / slide</strong></li>
+    <li>✔ Daftar Tabel, Isi, Pustaka: <strong>Rp20.000-an</strong></li>
+    <li><em>
+      Catatan: Grtais 3x Revisi, jika ada tambahan revisi cukup order ulang sesuai kebutuhan.
+    </em></li>
   </ul>
 </section>
 
@@ -187,22 +208,20 @@
 </footer>
 
 <script>
-  function chatViaWhatsApp() {
-    const nomorWhatsApp = '6285820625597';
-    const pesan = 
-      `Halo kak, saya mau rapiin darf skripsi bagian (sebutkan yang mau kamu rapiin)`;
+  function kirimWa(layanan) {
+    const nomor = '6285820625597';
+    const pesan = `Halo kak, saya mau order jasa ${layanan}. Apa langkah selanjutnya ya? 😊`;
+    window.open(`https://wa.me/${nomor}?text=${encodeURIComponent(pesan)}`, '_blank');
+  }
 
-    const url = `https://wa.me/6285820625597?text=${pesan}`;
-    window.open(url, '_blank');
+  function chatViaWhatsApp() {
+    const pesan = `Halo kak, saya mau rapiin draft skripsi bagian (sebutkan yang mau kamu rapiin)`;
+    window.open(`https://wa.me/6285820625597?text=${encodeURIComponent(pesan)}`, '_blank');
   }
 
   function orderLandingPage() {
-    const nomorWhatsApp = '6285820625597';
-    const pesan = 
-      `Halo kak, saya tertarik untuk order landing page. Saya siap order dengan harga Rp120.000. Apa saja yang perlu saya siapkan? 😊`;
-
-    const url = `https://wa.me/6285820625597?text=${pesan}`;
-    window.open(url, '_blank');
+    const pesan = `Halo kak, saya tertarik untuk order landing page. Saya siap order dengan harga Rp120.000. Apa saja yang perlu saya siapkan? 😊`;
+    window.open(`https://wa.me/6285820625597?text=${encodeURIComponent(pesan)}`, '_blank');
   }
 </script>
 
