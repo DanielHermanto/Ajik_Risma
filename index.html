@@ -297,27 +297,16 @@
       </div>
 
       <form class="row row-cols-md-auto g-3 align-items-center justify-content-center" method="POST"
-        action="https://script.google.com/macros/s/AKfycbyddFbEJRqwEeA6OmZAuNf0jw_B30ZUOS5qSDwlAKV_nurcW7H6osJx2ZWnIeTmPm_35g/exec"
-        id="my-form">
+        action="https://script.google.com/macros/s/AKfycbxWmIxen98I_Ca7Aov3hzMG5ojkC4_0AEGD54Sbt0zSKQWvrfM_Qo55GIFruOc6dOj-/execm">
         <div class="col-12">
           <div class="mb-3">
-            <label for="nama" class="form-label">Nama</label>
-            <input type="text" class="form-control" id="nama" name="nama">
-          </div>
-        </div>
-        <div class="col-12">
-          <div class="mb-3">
-            <label for="jumlah" class="form-label">Jumlah</label>
-            <input type="number" class="form-control" id="jumlah" name="jumlah" min="1" max="5" length="1" value="1">
-          </div>
-        </div>
-        <div class="col-12">
-          <div class="mb-3">
-            <label for="status" class="form-label">Konfirmasi</label>
-            <select name="status" id="status" class="form-select">
-              <option selected>Pilih salah satu</option>
-              <option value="Hadir">Hadir</option>
-              <option value="Tidak Hadir">Tidak Hadir</option>
+           <input type="text" name="nama" placeholder="Nama" required>
+<select name="kehadiran" required>
+  <option value="Hadir">Hadir</option>
+  <option value="Tidak Hadir">Tidak Hadir</option>
+</select>
+<textarea name="pesan" placeholder="Ucapan..."></textarea>
+
             </select>
           </div>
         </div>
