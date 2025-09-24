@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Undangan Pernikahan Islami</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Amiri&family=Great+Vibes&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- COVER -->
+  <section id="cover">
+    <h1>بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيم</h1>
+    <h2>LAILI & RAQIB</h2>
+    <p>Ahad, 01 Juni 2025</p>
+    <a href="#" class="btn" onclick="openInvitation()">Buka Undangan</a>
+  </section>
+
+  <!-- ISI UNDANGAN -->
+  <section id="content">
+    <div class="card">
+      <p class="names">LAILI & RAQIB</p>
+      <p class="date">Ahad, 01 Juni 2025<br>Masjid Agung Yogyakarta</p>
+
+      <div id="countdown"></div>
+
+      <p class="ayat">
+        “Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan untukmu pasangan-pasangan dari jenismu sendiri, agar kamu merasa tenteram kepadanya, dan Dia menjadikan di antaramu rasa kasih dan sayang.” 
+        <br>(QS. Ar-Rum: 21)
+      </p>
+
+      <a class="btn-map" href="https://maps.app.goo.gl/nQhQq7Am5bVc66Hw7" target="_blank">📍 Lihat Lokasi</a>
+    </div>
+
+    <footer>
+      Kehadiran dan doa restu Bapak/Ibu/Saudara/i sangat berarti bagi kami.  
+    </footer>
+  </section>
+
+  <!-- MUSIK -->
+  <audio id="bg-music" loop>
+    <source src="https://www.bensound.com/bensound-music/bensound-relaxing.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    function openInvitation() {
+      document.getElementById("cover").style.display = "none";
+      document.getElementById("content").style.display = "block";
+      document.getElementById("bg-music").play();
+    }
+
+    // COUNTDOWN
+    var eventDate = new Date("June 1, 2025 08:00:00").getTime();
+    var timer = setInterval(function(){
+      var now = new Date().getTime();
+      var distance = eventDate - now;
+
+      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById("countdown").innerHTML = 
+        "Hitung Mundur: " + days + " Hari " + hours + " Jam " + minutes + " Menit " + seconds + " Detik";
+
+      if (distance < 0) {
+        clearInterval(timer);
+        document.getElementById("countdown").innerHTML = "Acara telah dimulai!";
+      }
+    }, 1000);
+  </script>
+
+</body>
+</html>
