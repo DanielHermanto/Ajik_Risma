@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Wedding of Rima Nur Faizah & Ajik Moh Arifin</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display&display=swap');
+
+        :root {
+            --gold: #D4AF37;
+            --white: #ffffff;
+            --black-transparent: rgba(0, 0, 0, 0.5);
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Cinzel', serif;
+            color: var(--white);
+            overflow-x: hidden;
+            background-color: #000;
+            scroll-behavior: smooth;
+        }
+
+        section {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            transition: background-image 0.5s ease-in-out;
+            overflow: hidden;
+        }
+
+        section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--black-transparent);
+            z-index: 1;
+        }
+
+        section > * {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            padding: 20px;
+        }
+
+        #pembuka { background-image: url('images/1.jpg'); }
+        #profil { background-image: url('images/1.jpg'); }
+        #detail { background-image: url('images/2.jpg'); }
+        #galeri { background-image: url('images/2.jpg'); }
+        #peta { background-image: url('images/3.jpg'); }
+        #rekening { background-image: url('images/3.jpg'); }
+        #ucapan { background-image: url('images/4.jpg'); }
+        #penutup { background-image: url('images/12.jpg'); }
+
+        h1 {
+            font-family: 'Great Vibes', cursive;
+            font-size: 3em;
+            color: var(--gold);
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            font-family: 'Raleway', sans-serif
+            font-size: 100%;
+            color: var(--white);
+        }
+
+        .button {
+            background-color: rgba(255, 255, 255, 0.2);
+            color: var(--white);
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+
+        .button:hover {
+            background-color: rgba(255, 255, 255, 0.4);
+            transform: scale(1.05);
+        }
+
+        .hidden { opacity: 0; transform: translateY(20px); transition: opacity 0.5s ease, transform 0.5s ease; }
+        .visible { opacity: 1; transform: translateY(0); }
+
+        #carousel {
+           display: flex;
+            overflow-x: auto;
+            width: 90%;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+            scroll-behavior: smooth;
+            position: relative;
+            align-items: center;
+            justify-content: center;
+            padding: 20px 0;
+        }
+
+        #carousel::-webkit-scrollbar { display: none; }
+
+        .carousel-item {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin: 10px;
+                flex-shrink: 0;
+            }
+
+        /* Ubah jadi kotak */
+        #carousel img {
+                width: 200px;
+                height: 200px;
+                object-fit: cover;
+                border-radius: 12px;
+                border: 4px solid var(--gold);
+                box-shadow: 0 4px 12px rgba(0,0,0,0.5), inset 0 0 8px rgba(212,175,55,0.4);
+                background-color: rgba(255,255,255,0.05);
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        #carousel img:hover { transform: scale(1.1); }
+
+        #carousel img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(212,175,55,0.6);
+        }
+        .carousel-item p {
+            margin-top: 5px;
+            font-size: 0.9em;
+            color: var(--gold);
+            font-style: italic;
+        }
+       .carousel-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.4);
+            color: var(--white);
+            border: none;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.8em;
+            font-weight: bold;
+            z-index: 5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        .carousel-button:hover {
+            background-color: rgba(0, 0, 0, 0.7);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+#prevBtn { left: 30px; }
+#nextBtn { right: 30px; }
+
+        /* Countdown */
+        #countdown {
+            font-size: 2em;
+            color: var(--gold);
+            margin-top: 20px;
+            background-color: rgba(0, 0, 0, 0.5); /* bayangan hitam transparan */
+            padding: 10px 20px;
+            border-radius: 10px;
+            display: inline-block;
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2em; }
+            h2 { font-size: 1.5em; }
+            section { height: auto; padding: 50px 0; }
+            .button { font-size: 1em; padding: 10px 20px; }
+            #carousel img { width: 150px; height: 150px; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Section Pembuka -->
+    <section id="pembuka">
+        <h1>Rima & Ajik</h1>
+        <h2>Dengan penuh sukacita kami mengundang Anda untuk hadir dalam hari bahagia kami</h2>
+        <button class="button" id="openButton">OPEN INVITATION</button>
+    </section>
+
+    <!-- Section Profil Pengantin -->
+    <section id="profil" class="hidden">
+        <h2>بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ <br>Dengan memohon rahmat dan ridha Allah Subhanahu wa Ta‘ala,
+        kami bermaksud menyelenggarakan pernikahan kami.</h2>
+        <h1>The Wedding of</h1>
+        <h3>Rima Nur Faizah & Ajik Moh Arifin</h3>
+        <p>"Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung dan merasa tenteram kepadanya, dan Dia menjadikan di antaramu rasa kasih dan sayang." (QS Ar-Rum:21)</p>
+    </section>
+
+    <!-- Section Detail Acara -->
+    <section id="detail" class="hidden">
+        <h2>Detail Acara</h2>
+        <p><strong>Akad & Resepsi:</strong><br>Jumat, 7 November 2025</p>
+        <p><strong>Mempelai Wanita:</strong><br>Rima Nur Faizah<br>Putri dari Bapak Sujono dan Ibu Sutrino Wati</p>
+        <p><strong>Mempelai Pria:</strong><br>Ajik Moh Arifin<br>Putra dari (Alm.) Bapak Parjono dan Ibu Sukarni</p>
+        <p><strong>Alamat:</strong><br>Desa Slungkep RT 02 / RW 01, Kayen, Pati</p>
+
+        <!-- Countdown Timer -->
+        <div id="countdown"></div>
+    </section>
+
+    <!-- Section Galeri Foto -->
+    <section id="galeri" class="hidden">
+    <h2>Galeri Foto</h2>
+    <div style="position: relative; width: 100%; display: flex; justify-content: center; align-items: center;">
+        <button class="carousel-button" id="prevBtn">&lt;</button>
+        <div id="carousel">
+            <div class="carousel-item"><img src="images/1.jpg" alt="Foto 1"></div>
+            <div class="carousel-item"><img src="images/2.jpg" alt="Foto 2"></div>
+            <div class="carousel-item"><img src="images/3.jpg" alt="Foto 3"></div>
+            <div class="carousel-item"><img src="images/4.jpg" alt="Foto 4"></div>
+            <div class="carousel-item"><img src="images/5.jpg" alt="Foto 5"></div>
+            <div class="carousel-item"><img src="images/6.jpg" alt="Foto 6"></div>
+            <div class="carousel-item"><img src="images/7.jpg" alt="Foto 7"></div>
+            <div class="carousel-item"><img src="images/8.jpg" alt="Foto 8"></div>
+            <div class="carousel-item"><img src="images/9.jpg" alt="Foto 9"></div>
+            <div class="carousel-item"><img src="images/10.jpg" alt="Foto 10"></div>
+            <div class="carousel-item"><img src="images/11.jpg" alt="Foto 11"></div>
+            <div class="carousel-item"><img src="images/12.jpg" alt="Foto 12"></div>
+            <div class="carousel-item"><img src="images/13.jpg" alt="Foto 13"></div>
+            <div class="carousel-item"><img src="images/14.jpg" alt="Foto 14"></div>
+            <div class="carousel-item"><img src="images/15.jpg" alt="Foto 15"></div>
+            <div class="carousel-item"><img src="images/16.jpg" alt="Foto 16"></div>
+            <div class="carousel-item"><img src="images/17.jpg" alt="Foto 17"></div>
+            <div class="carousel-item"><img src="images/18.jpg" alt="Foto 18"></div>
+            <div class="carousel-item"><img src="images/19.jpg" alt="Foto 19"></div>
+            <div class="carousel-item"><img src="images/20.jpg" alt="Foto 20"></div>
+        </div>
+        <button class="carousel-button" id="nextBtn">&gt;</button>
+    </div>
+</section>
+    <!-- Section Peta -->
+    <section id="peta" class="hidden">
+        <h2>Peta Lokasi</h2>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m13!1m8!1m3!1d3765.206036971362!2d110.928882!3d-6.866253!3m2!1i1024!2i768!4f13.1!3m2!1m1!2s!5e1!3m2!1sid!2sid!4v1760876580162!5m2!1sid!2sid" 
+    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </section>
+
+    <!-- Section Rekening -->
+    <section id="rekening" class="hidden">
+        <h2>Rekening Hadiah</h2>
+        <p>Bank: BCA</p>
+        <p>Atas Nama: Rima Nur Faizah</p>
+        <p>No. Rekening: 1234567890</p>
+    </section>
+
+    <!-- Section Ucapan -->
+    <section id="ucapan" class="hidden">
+        <h2>Ucapan untuk Pengantin</h2>
+        <form id="ucapanForm">
+            <input type="text" id="nama" placeholder="Nama Anda" required><br>
+            <textarea id="pesan" placeholder="Pesan Anda" required></textarea><br>
+            <button type="submit">Kirim Ucapan</button>
+        </form>
+        <div id="daftarUcapan"></div>
+    </section>
+
+    <!-- Section Penutup -->
+    <section id="penutup" class="hidden">
+        <h2>Penutup</h2>
+        <p>Terima kasih atas doa dan kehadiran Anda. Semoga pernikahan ini menjadi rumah yang penuh kasih, sakinah, mawaddah, dan rahmah.</p>
+    </section>
+
+    <audio id="backgroundMusic" loop>
+        <source src="lagu weding.mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+        // Scroll dan musik
+        document.getElementById('openButton').addEventListener('click', function() {
+            document.getElementById('pembuka').style.opacity = 0;
+            setTimeout(() => {
+                window.scrollTo({ top: document.getElementById('profil').offsetTop, behavior: 'smooth' });
+                document.getElementById('backgroundMusic').play();
+            }, 500);
+        });
+
+        // Animasi scroll section
+        const sections = document.querySelectorAll('section');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    entry.target.classList.remove('hidden');
+                }
+            });
+        }, { threshold: 0.1 });
+        sections.forEach(section => observer.observe(section));
+
+        // Countdown Timer
+        const targetDate = new Date("Nov 7, 2025 08:00:00").getTime();
+        const timer = setInterval(function() {
+            const now = new Date().getTime();
+            const distance = targetDate - now;
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            document.getElementById("countdown").innerHTML =
+                `${days} Hari ${hours} Jam ${minutes} Menit ${seconds} Detik`;
+            if (distance < 0) {
+                clearInterval(timer);
+                document.getElementById("countdown").innerHTML = "Hari Bahagia Telah Tiba 💕";
+            }
+        }, 1000);
+
+        // Carousel
+        const carousel = document.getElementById('carousel');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const scrollAmount = 250;
+
+        prevBtn.addEventListener('click', () => carousel.scrollBy({ left: -scrollAmount, behavior: 'smooth' }));
+        nextBtn.addEventListener('click', () => carousel.scrollBy({ left: scrollAmount, behavior: 'smooth' }));
+    </script>
+</body>
+</html>
