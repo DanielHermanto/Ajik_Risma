@@ -120,54 +120,55 @@
             }
 
         /* Ubah jadi kotak */
-        #carousel img {
-                width: 200px;
-                height: 200px;
-                object-fit: cover;
-                border-radius: 12px;
-                border: 4px solid var(--gold);
-                box-shadow: 0 4px 12px rgba(0,0,0,0.5), inset 0 0 8px rgba(212,175,55,0.4);
-                background-color: rgba(255,255,255,0.05);
-                transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        #carousel img:hover { transform: scale(1.1); }
+        #gallery {
+        background-image: url('images/2.jpg');
+        color: #333;
+        text-align: center;
+        padding: 60px 20px;
+        min-height: 100vh;
+    }
 
-        #carousel img:hover {
-            transform: scale(1.05);
-            box-shadow: 0 6px 20px rgba(212,175,55,0.6);
-        }
-        .carousel-item p {
-            margin-top: 5px;
-            font-size: 0.9em;
-            color: var(--gold);
-            font-style: italic;
-        }
-       .carousel-button {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background-color: rgba(0, 0, 0, 0.4);
-            color: var(--white);
-            border: none;
-            width: 45px;
-            height: 45px;
-            border-radius: 50%;
-            cursor: pointer;
-            font-size: 1.8em;
-            font-weight: bold;
-            z-index: 5;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: background-color 0.3s ease, transform 0.3s ease;
-        }
-        .carousel-button:hover {
-            background-color: rgba(0, 0, 0, 0.7);
-            transform: translateY(-50%) scale(1.1);
-        }
+.gallery-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  justify-items: center;
+  width: 90%;
+  margin: 0 auto;
+}
 
-#prevBtn { left: 30px; }
-#nextBtn { right: 30px; }
+.photo {
+  background: #fffdf5;
+  border-radius: 20px;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.photo:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 22px rgba(0,0,0,0.25);
+}
+
+.photo:hover img {
+  transform: scale(1.05);
+}
+
+/* Responsif untuk HP */
+@media (max-width: 600px) {
+  .gallery-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+  }
+}
 
         /* Countdown */
         #countdown {
@@ -220,34 +221,23 @@
     </section>
 
     <!-- Section Galeri Foto -->
-    <section id="galeri" class="hidden">
-    <h2>Galeri Foto</h2>
-    <div style="position: relative; width: 100%; display: flex; justify-content: center; align-items: center;">
-        <button class="carousel-button" id="prevBtn">&lt;</button>
-        <div id="carousel">
-            <div class="carousel-item"><img src="images/1.jpg" alt="Foto 1"></div>
-            <div class="carousel-item"><img src="images/2.jpg" alt="Foto 2"></div>
-            <div class="carousel-item"><img src="images/3.jpg" alt="Foto 3"></div>
-            <div class="carousel-item"><img src="images/4.jpg" alt="Foto 4"></div>
-            <div class="carousel-item"><img src="images/5.jpg" alt="Foto 5"></div>
-            <div class="carousel-item"><img src="images/6.jpg" alt="Foto 6"></div>
-            <div class="carousel-item"><img src="images/7.jpg" alt="Foto 7"></div>
-            <div class="carousel-item"><img src="images/8.jpg" alt="Foto 8"></div>
-            <div class="carousel-item"><img src="images/9.jpg" alt="Foto 9"></div>
-            <div class="carousel-item"><img src="images/10.jpg" alt="Foto 10"></div>
-            <div class="carousel-item"><img src="images/11.jpg" alt="Foto 11"></div>
-            <div class="carousel-item"><img src="images/12.jpg" alt="Foto 12"></div>
-            <div class="carousel-item"><img src="images/13.jpg" alt="Foto 13"></div>
-            <div class="carousel-item"><img src="images/14.jpg" alt="Foto 14"></div>
-            <div class="carousel-item"><img src="images/15.jpg" alt="Foto 15"></div>
-            <div class="carousel-item"><img src="images/16.jpg" alt="Foto 16"></div>
-            <div class="carousel-item"><img src="images/17.jpg" alt="Foto 17"></div>
-            <div class="carousel-item"><img src="images/18.jpg" alt="Foto 18"></div>
-            <div class="carousel-item"><img src="images/19.jpg" alt="Foto 19"></div>
-            <div class="carousel-item"><img src="images/20.jpg" alt="Foto 20"></div>
-        </div>
-        <button class="carousel-button" id="nextBtn">&gt;</button>
-    </div>
+   <section id="gallery" class="hidden">
+  <h2 style="color:#f6f5f5; font-family:'Cinzel', serif; font-size:1.5em; margin-bottom:30px;">Galeri Foto</h2>
+
+  <div class="gallery-container">
+    <div class="photo"><img src="images/1.jpg" alt="Foto 1"></div>
+    <div class="photo"><img src="images/2.jpg" alt="Foto 2"></div>
+    <div class="photo"><img src="images/3.jpg" alt="Foto 3"></div>
+    <div class="photo"><img src="images/4.jpg" alt="Foto 4"></div>
+    <div class="photo"><img src="images/5.jpg" alt="Foto 5"></div>
+    <div class="photo"><img src="images/6.jpg" alt="Foto 6"></div>
+    <div class="photo"><img src="images/7.jpg" alt="Foto 7"></div>
+    <div class="photo"><img src="images/8.jpg" alt="Foto 8"></div>
+    <div class="photo"><img src="images/9.jpg" alt="Foto 9"></div>
+    <div class="photo"><img src="images/10.jpg" alt="Foto 10"></div>
+    <div class="photo"><img src="images/11.jpg" alt="Foto 11"></div>
+    <div class="photo"><img src="images/12.jpg" alt="Foto 12"></div>
+  </div>
 </section>
     <!-- Section Peta -->
     <section id="peta" class="hidden">
@@ -325,14 +315,17 @@
         }, 1000);
 
         // Carousel
-        const carousel = document.getElementById('carousel');
-        const prevBtn = document.getElementById('prevBtn');
-        const nextBtn = document.getElementById('nextBtn');
-        const scrollAmount = 250;
-
-        prevBtn.addEventListener('click', () => carousel.scrollBy({ left: -scrollAmount, behavior: 'smooth' }));
-        nextBtn.addEventListener('click', () => carousel.scrollBy({ left: scrollAmount, behavior: 'smooth' }));
-    </script>
+        const gallerySection = document.querySelector('#gallery');
+        const galleryObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+         gallerySection.classList.add('visible');
+      gallerySection.classList.remove('hidden');
+         }
+        });
+}, { threshold: 0.2 });
+galleryObserver.observe(gallerySection);
+</script>   
 </body>
 
 </html>
