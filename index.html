@@ -196,6 +196,8 @@
         <h1>Rima & Ajik</h1>
         <h2>Dengan penuh sukacita kami mengundang Anda untuk hadir dalam hari bahagia kami</h2>
         <button class="button" id="openButton">OPEN INVITATION</button>
+        
+        
     </section>
 
     <!-- Section Profil Pengantin -->
@@ -276,43 +278,71 @@
     </audio>
 
     <script>
-        // Scroll dan musik
-        document.getElementById('openButton').addEventListener('click', function() {
-            document.getElementById('pembuka').style.opacity = 0;
-            setTimeout(() => {
-                window.scrollTo({ top: document.getElementById('profil').offsetTop, behavior: 'smooth' });
-                document.getElementById('backgroundMusic').play();
-            }, 500);
-        });
+        const backgroundMusic = document.getElementById('backgroundMusic');
+  const sections = document.querySelectorAll('section');
+  const openButton = document.getElementById('openButton');
 
-        // Animasi scroll section
-        const sections = document.querySelectorAll('section');
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    entry.target.classList.remove('hidden');
-                }
-            });
-        }, { threshold: 0.1 });
-        sections.forEach(section => observer.observe(section));
+  // Semua section (selain pembuka) disembunyikan dulu
+  sections.forEach(sec => {
+    if (sec.id !== 'pembuka') sec.style.display = 'none';
+  });
 
-        // Countdown Timer
-        const targetDate = new Date("Nov 7, 2025 08:00:00").getTime();
-        const timer = setInterval(function() {
-            const now = new Date().getTime();
-            const distance = targetDate - now;
-            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-            document.getElementById("countdown").innerHTML =
-                `${days} Hari ${hours} Jam ${minutes} Menit ${seconds} Detik`;
-            if (distance < 0) {
-                clearInterval(timer);
-                document.getElementById("countdown").innerHTML = "Hari Bahagia Telah Tiba 💕";
-            }
-        }, 1000);
+  // Ketika klik OPEN INVITATION
+  openButton.addEventListener('click', () => {
+    document.getElementById('pembuka').style.opacity = 0;
+    setTimeout(() => {
+      // Tampilkan semua section
+      sections.forEach(sec => {
+        if (sec.id !== 'pembuka') {
+          sec.style.display = 'flex';
+          sec.classList.add('hidden');
+        }
+      });
+
+      // Scroll ke bagian profil
+      window.scrollTo({
+        top: document.getElementById('profil').offsetTop,
+        behavior: 'smooth'
+      });
+
+      // Putar musik
+      backgroundMusic.play();
+    }, 500);
+  });
+
+  // Animasi muncul saat discroll
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        entry.target.classList.remove('hidden');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  sections.forEach(section => {
+    if (section.id !== 'pembuka') observer.observe(section);
+  });
+
+  // Countdown Timer
+  const targetDate = new Date("Nov 7, 2025 08:00:00").getTime();
+  const timer = setInterval(function() {
+    const now = new Date().getTime();
+    const distance = targetDate - now;
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    const countdown = document.getElementById("countdown");
+    if (countdown) {
+      countdown.innerHTML = `${days} Hari ${hours} Jam ${minutes} Menit ${seconds} Detik`;
+      if (distance < 0) {
+        clearInterval(timer);
+        countdown.innerHTML = "Hari Bahagia Telah Tiba 💕";
+      }
+    }
+  }, 1000);
 
         // Carousel
         const gallerySection = document.querySelector('#gallery');
@@ -325,6 +355,7 @@
         });
 }, { threshold: 0.2 });
 galleryObserver.observe(gallerySection);
+
 </script>   
 </body>
 
