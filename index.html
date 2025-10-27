@@ -5,189 +5,186 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Wedding of Rima Nur Faizah & Ajik Moh Arifin</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display&display=swap');
+         @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display&display=swap');
 
-        :root {
-            --gold: #D4AF37;
-            --white: #ffffff;
-            --black-transparent: rgba(0, 0, 0, 0.5);
-        }
-
-        body {
-            margin: 0;
-            font-family: 'Cinzel', serif;
-            color: var(--white);
-            overflow-x: hidden;
-            background-color: #000;
-            scroll-behavior: smooth;
-        }
-
-        section {
-            position: relative;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            transition: background-image 0.5s ease-in-out;
-            overflow: hidden;
-        }
-
-        section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: var(--black-transparent);
-            z-index: 1;
-        }
-
-        section > * {
-            position: relative;
-            z-index: 2;
-            text-align: center;
-            padding: 20px;
-        }
-
-        #pembuka { background-image: url('images/1.jpg'); }
-        #profil { background-image: url('images/1.jpg'); }
-        #detail { background-image: url('images/2.jpg'); }
-        #galeri { background-image: url('images/2.jpg'); }
-        #peta { background-image: url('images/3.jpg'); }
-        #rekening { background-image: url('images/3.jpg'); }
-        #ucapan { background-image: url('images/4.jpg'); }
-        #penutup { background-image: url('images/12.jpg'); }
-
-        h1 {
-            font-family: 'Great Vibes', cursive;
-            font-size: 3em;
-            color: var(--gold);
-            margin-bottom: 10px;
-        }
-
-        h2 {
-            font-family: 'Raleway', sans-serif
-            font-size: 100%;
-            color: var(--white);
-        }
-
-        .button {
-            background-color: rgba(255, 255, 255, 0.2);
-            color: var(--white);
-            border: none;
-            padding: 15px 30px;
-            font-size: 1.2em;
-            cursor: pointer;
-            transition: background-color 0.3s ease, transform 0.3s ease;
-            border-radius: 5px;
-            margin-top: 20px;
-        }
-
-        .button:hover {
-            background-color: rgba(255, 255, 255, 0.4);
-            transform: scale(1.05);
-        }
-
-        .hidden { opacity: 0; transform: translateY(20px); transition: opacity 0.5s ease, transform 0.5s ease; }
-        .visible { opacity: 1; transform: translateY(0); }
-
-        #carousel {
-           display: flex;
-            overflow-x: auto;
-            width: 90%;
-            scrollbar-width: none;
-            -ms-overflow-style: none;
-            scroll-behavior: smooth;
-            position: relative;
-            align-items: center;
-            justify-content: center;
-            padding: 20px 0;
-        }
-
-        #carousel::-webkit-scrollbar { display: none; }
-
-        .carousel-item {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                margin: 10px;
-                flex-shrink: 0;
-            }
-
-        /* Ubah jadi kotak */
-        #gallery {
-        background-image: url('images/2.jpg');
-        color: #333;
-        text-align: center;
-        padding: 60px 20px;
-        min-height: 100vh;
+    :root {
+      --gold: #D4AF37;
+      --white: #ffffff;
+      --black-transparent: rgba(0, 0, 0, 0.5);
     }
 
-.gallery-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 25px;
-  justify-items: center;
-  width: 90%;
-  margin: 0 auto;
-}
+    body {
+      margin: 0;
+      font-family: 'Cinzel', serif;
+      color: var(--white);
+      overflow-x: hidden;
+      background-color: #000;
+      scroll-behavior: smooth;
+    }
 
-.photo {
-  background: #fffdf5;
-  border-radius: 20px;
-  box-shadow: 0 8px 18px rgba(0,0,0,0.15);
-  overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+    section {
+      position: relative;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      transition: background-image 0.5s ease-in-out;
+      overflow: hidden;
+    }
 
-.photo img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  transition: transform 0.4s ease;
-}
+    section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: var(--black-transparent);
+      z-index: 1;
+    }
 
-.photo:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 22px rgba(0,0,0,0.25);
-}
+    section > * {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding: 20px;
+    }
 
-.photo:hover img {
-  transform: scale(1.05);
-}
+    #pembuka { background-image: url('images/1.jpg'); }
+    #profil { background-image: url('images/1.jpg'); }
+    #detail { background-image: url('images/2.jpg'); }
+    #galeri { background-image: url('images/2.jpg'); }
+    #peta { background-image: url('images/3.jpg'); }
+    #rekening { background-image: url('images/3.jpg'); }
+    #ucapan { background-image: url('images/4.jpg'); }
+    #penutup { background-image: url('images/12.jpg'); }
 
-/* Responsif untuk HP */
-@media (max-width: 600px) {
-  .gallery-container {
-    grid-template-columns: 1fr 1fr;
-    gap: 15px;
-  }
-}
+    /* Animasi tulisan bergerak */
+    @keyframes fadeZoom {
+      0% { opacity: 0; transform: scale(0.8); }
+      50% { opacity: 0.7; transform: scale(1.05); }
+      100% { opacity: 1; transform: scale(1); }
+    }
 
-        /* Countdown */
-        #countdown {
-            font-size: 2em;
-            color: var(--gold);
-            margin-top: 20px;
-            background-color: rgba(0, 0, 0, 0.5); /* bayangan hitam transparan */
-            padding: 10px 20px;
-            border-radius: 10px;
-            display: inline-block;
-        }
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
 
-        @media (max-width: 768px) {
-            h1 { font-size: 2em; }
-            h2 { font-size: 1.5em; }
-            section { height: auto; padding: 50px 0; }
-            .button { font-size: 1em; padding: 10px 20px; }
-            #carousel img { width: 150px; height: 150px; }
-        }
+    h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 3em;
+      color: var(--gold);
+      margin-bottom: 10px;
+      animation: fadeZoom 2s ease-in-out infinite alternate;
+    }
+
+    h2, h3, p {
+      font-family: 'Playfair Display', serif;
+      animation: slideUp 1.5s ease-out;
+    }
+
+    .button {
+      background-color: rgba(255, 255, 255, 0.2);
+      color: var(--white);
+      border: none;
+      padding: 15px 30px;
+      font-size: 1.2em;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+      border-radius: 5px;
+      margin-top: 20px;
+      animation: fadeZoom 2s ease-in-out infinite alternate;
+    }
+
+    .button:hover {
+      background-color: rgba(255, 255, 255, 0.4);
+      transform: scale(1.05);
+    }
+
+    .hidden {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 1s ease, transform 1s ease;
+    }
+
+    .visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Galeri dengan animasi */
+    #gallery {
+      background-image: url('images/2.jpg');
+      color: #333;
+      text-align: center;
+      padding: 60px 20px;
+      min-height: 100vh;
+    }
+
+    .gallery-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      justify-items: center;
+      width: 90%;
+      margin: 0 auto;
+    }
+
+    .photo {
+      background: #fffdf5;
+      border-radius: 20px;
+      box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+      overflow: hidden;
+      transform: scale(0.8);
+      opacity: 0;
+      transition: transform 0.8s ease, box-shadow 0.3s ease, opacity 1s ease;
+    }
+
+    .photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .photo.show {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .photo:hover {
+      transform: translateY(-8px) scale(1.05);
+      box-shadow: 0 12px 22px rgba(0,0,0,0.25);
+    }
+
+    .photo:hover img {
+      transform: scale(1.08);
+    }
+
+    /* Responsif */
+    @media (max-width: 768px) {
+      h1 { font-size: 2em; }
+      h2 { font-size: 1.5em; }
+      section { height: auto; padding: 50px 0; }
+      .button { font-size: 1em; padding: 10px 20px; }
+    }
+
+    /* Countdown */
+    #countdown {
+      font-size: 2em;
+      color: var(--gold);
+      margin-top: 20px;
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 10px 20px;
+      border-radius: 10px;
+      display: inline-block;
+    }
     </style>
 </head>
 <body>
@@ -270,7 +267,7 @@
     <!-- Section Penutup -->
     <section id="penutup" class="hidden">
         <h2>Penutup</h2>
-        <p>Terima kasih atas doa dan kehadiran Anda. Semoga pernikahan ini menjadi rumah yang penuh kasih, sakinah, mawaddah, dan rahmah.</p>
+        <p >Terima kasih atas doa dan kehadiran Anda. Semoga pernikahan ini menjadi rumah yang penuh kasih, sakinah, mawaddah, dan rahmah.</p>
     </section>
 
     <audio id="backgroundMusic" loop>
@@ -278,85 +275,76 @@
     </audio>
 
     <script>
-        const backgroundMusic = document.getElementById('backgroundMusic');
-  const sections = document.querySelectorAll('section');
-  const openButton = document.getElementById('openButton');
+    const backgroundMusic = document.getElementById('backgroundMusic');
+    const sections = document.querySelectorAll('section');
+    const openButton = document.getElementById('openButton');
 
-  // Semua section (selain pembuka) disembunyikan dulu
-  sections.forEach(sec => {
-    if (sec.id !== 'pembuka') sec.style.display = 'none';
-  });
+    sections.forEach(sec => {
+      if (sec.id !== 'pembuka') sec.style.display = 'none';
+    });
 
-  // Ketika klik OPEN INVITATION
-  openButton.addEventListener('click', () => {
-    document.getElementById('pembuka').style.opacity = 0;
-    setTimeout(() => {
-      // Tampilkan semua section
-      sections.forEach(sec => {
-        if (sec.id !== 'pembuka') {
-          sec.style.display = 'flex';
-          sec.classList.add('hidden');
+    openButton.addEventListener('click', () => {
+      document.getElementById('pembuka').style.opacity = 0;
+      setTimeout(() => {
+        sections.forEach(sec => {
+          if (sec.id !== 'pembuka') {
+            sec.style.display = 'flex';
+            sec.classList.add('hidden');
+          }
+        });
+        window.scrollTo({
+          top: document.getElementById('profil').offsetTop,
+          behavior: 'smooth'
+        });
+        backgroundMusic.play();
+      }, 500);
+    });
+
+    // Animasi tiap section saat discroll
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          entry.target.classList.remove('hidden');
         }
       });
+    }, { threshold: 0.2 });
 
-      // Scroll ke bagian profil
-      window.scrollTo({
-        top: document.getElementById('profil').offsetTop,
-        behavior: 'smooth'
-      });
-
-      // Putar musik
-      backgroundMusic.play();
-    }, 500);
-  });
-
-  // Animasi muncul saat discroll
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        entry.target.classList.remove('hidden');
-      }
+    sections.forEach(section => {
+      if (section.id !== 'pembuka') observer.observe(section);
     });
-  }, { threshold: 0.1 });
 
-  sections.forEach(section => {
-    if (section.id !== 'pembuka') observer.observe(section);
-  });
+    // Countdown Timer
+    const targetDate = new Date("Nov 7, 2025 08:00:00").getTime();
+    const timer = setInterval(function() {
+      const now = new Date().getTime();
+      const distance = targetDate - now;
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-  // Countdown Timer
-  const targetDate = new Date("Nov 7, 2025 08:00:00").getTime();
-  const timer = setInterval(function() {
-    const now = new Date().getTime();
-    const distance = targetDate - now;
-    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-    const countdown = document.getElementById("countdown");
-    if (countdown) {
-      countdown.innerHTML = `${days} Hari ${hours} Jam ${minutes} Menit ${seconds} Detik`;
-      if (distance < 0) {
-        clearInterval(timer);
-        countdown.innerHTML = "Hari Bahagia Telah Tiba 💕";
+      const countdown = document.getElementById("countdown");
+      if (countdown) {
+        countdown.innerHTML = `${days} Hari ${hours} Jam ${minutes} Menit ${seconds} Detik`;
+        if (distance < 0) {
+          clearInterval(timer);
+          countdown.innerHTML = "Hari Bahagia Telah Tiba 💕";
+        }
       }
-    }
-  }, 1000);
+    }, 1000);
 
-        // Carousel
-        const gallerySection = document.querySelector('#gallery');
-        const galleryObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-         gallerySection.classList.add('visible');
-      gallerySection.classList.remove('hidden');
-         }
-        });
-}, { threshold: 0.2 });
-galleryObserver.observe(gallerySection);
+    // Animasi muncul galeri
+    const galleryPhotos = document.querySelectorAll('.photo');
+    const galleryObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+        }
+      });
+    }, { threshold: 0.2 });
 
-</script>   
+    galleryPhotos.forEach(photo => galleryObserver.observe(photo));
+  </script>
 </body>
-
 </html>
